@@ -12,9 +12,9 @@ const r = new snoowrap({
 });
 
 async function main() {
-  const hotsubmissions = await r.getHot();
+  const hotSubmissions = await r.getHot();
 
-  const titles = hotsubmissions.map(
+  const titles = hotSubmissions.map(
     (post, idx) => `${chalk.red(`[${idx}]`)} ${post.title}`
   );
 
@@ -26,7 +26,7 @@ async function main() {
   const id = await readline(
     chalk.green("What post do you want to see the comments for? ")
   );
-  const chosen = hotsubmissions[id];
+  const chosen = hotSubmissions[id];
 
   console.log("\n");
   if (chosen == undefined) {
