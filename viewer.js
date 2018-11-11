@@ -1,4 +1,6 @@
 const snoowrap = require("snoowrap");
+const chalk = require("chalk");
+
 const { readline } = require("./lib");
 
 const r = new snoowrap({
@@ -9,17 +11,21 @@ const r = new snoowrap({
   password: "demoucll"
 });
 
-(async () => {
+async function main() {
   const hotsubmissions = await r.getHot();
 
-  const titles = hotsubmissions.map((post, idx) => `[${idx}] ${post.title}`);
+  const titles = hotsubmissions.map(
+    (post, idx) => `${chalk.red(`[${idx}]`)} ${post.title}`
+  );
 
   for (const title of titles) {
     console.log(title);
   }
 
   console.log("\n");
-  const id = await readline("What post do you want to see the comments for? ");
+  const id = await readline(
+    chalk.green("What post do you want to see the comments for? ")
+  );
   const chosen = hotsubmissions[id];
 
   console.log("\n");
@@ -36,8 +42,8 @@ const r = new snoowrap({
 
   for (const comment of comments) {
     console.log(comment);
-    console.log("=============");
+    console.log(chalk.orange("============="));
   }
-})()
-  .then(_ => console.log("done"))
-  .catch(console.error);
+}
+
+main().catch(console.error);

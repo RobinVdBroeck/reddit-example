@@ -4,6 +4,7 @@
   "main": "viewer.js",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.1",
     "node-fetch": "^2.2.1",
     "simple-oauth2": "^2.2.1",
     "snoowrap": "^1.15.2"
