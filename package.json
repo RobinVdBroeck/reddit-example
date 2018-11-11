@@ -1,0 +1,11 @@
+{
+  "name": "reddit-demo",
+  "version": "1.0.0",
+  "main": "viewer.js",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.2.1",
+    "simple-oauth2": "^2.2.1",
+    "snoowrap": "^1.15.2"
+  }
+}
